@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "module": "ES2022",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES2022"
+  }
+}
