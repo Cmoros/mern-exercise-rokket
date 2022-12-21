@@ -1,10 +1,22 @@
-import { Button, Col, Container, FormGroup, Row } from "react-bootstrap";
-import Form from "react-bootstrap/Form";
+import { FormEvent } from "react";
+import { Button, Col, Container, Row, Form } from "react-bootstrap";
+
+const handleSubmit = async (e: FormEvent) => {
+  e.preventDefault();
+  if (!(e.target instanceof HTMLFormElement)) return;
+  const formData = new FormData(e.target);
+  const result = await fetch("/api/user/", {
+    method: "post",
+    body: formData,
+  }).then((res) => res.json());
+  e.target.reset();
+  console.log(result);
+};
 
 const Create = () => {
   return (
     <Container className="bg-light p-4 mt-4 rounded m-auto w-75">
-      <Form autoComplete="off">
+      <Form autoComplete="off" onSubmit={handleSubmit}>
         <Row className="flex-column flex-sm-row">
           <Col>
             <Form.Group className="mb-3" controlId="a">

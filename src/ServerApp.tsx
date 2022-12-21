@@ -2,8 +2,8 @@ import {
   renderToPipeableStream,
   RenderToPipeableStreamOptions,
 } from "react-dom/server";
-import { StaticRouter } from "react-router-dom/server";
-import App from "./App";
+import { StaticRouter } from "react-router-dom/server.js";
+import App from "./App.js";
 
 export default function render(
   url: string,

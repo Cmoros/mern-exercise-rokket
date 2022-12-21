@@ -3,10 +3,24 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react-jsx",
+    "lib": ["ESNext", "DOM"],
     "module": "ES2022",
     "moduleResolution": "node",
     "skipLibCheck": true,
+    "allowJs": true,
     "strict": true,
-    "target": "ES2022"
-  }
+    "target": "ESNext",
+    // "baseUrl": ".",
+    "outDir": "./dist/server"
+  },
+  "include": [
+    "server.ts",
+    "config.ts",
+    "src/**/*",
+    "routers/**/*",
+    "models/**/*",
+    "controllers/**/*",
+    "middlewares/**/*"
+  ],
+  "exclude": ["node_modules", "./dist/**/*"]
 }
