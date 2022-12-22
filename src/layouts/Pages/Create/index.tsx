@@ -1,4 +1,4 @@
-import { FormEvent } from "react";
+import { FC, FormEvent } from "react";
 import { Button, Col, Container, Row, Form } from "react-bootstrap";
 
 const handleSubmit = async (e: FormEvent) => {
@@ -17,6 +17,20 @@ const Create = () => {
   return (
     <Container className="bg-light p-4 mt-4 rounded m-auto w-75">
       <Form autoComplete="off" onSubmit={handleSubmit}>
+        {/* <Row className="flex-column flex-sm-row">
+          <FormColumn
+            label="Nombre de usuario"
+            placeholder="Nombre"
+            name="name"
+          />
+          <FormColumn label="Usuario" placeholder="Usuario" name="username" />
+        </Row>
+        <Row className="flex-column flex-md-row">
+          <FormColumn label="Email" placeholder="Email" name="email" />
+          <FormColumn label="Telefono" placeholder="Telefono" name="phone" />
+          <FormColumn label="Pagina web" placeholder="Web" name="website" />
+        </Row> */}
+
         <Row className="flex-column flex-sm-row">
           <Col>
             <Form.Group className="mb-3" controlId="a">
@@ -60,3 +74,12 @@ const Create = () => {
 };
 
 export default Create;
+
+const FormColumn: FC<any> = ({ label, placeholder, name }) => (
+  <Col>
+    <Form.Group className="mb-3" controlId="a">
+      <Form.Label>{label}</Form.Label>
+      <Form.Control type="text" placeholder={placeholder} name={name} />
+    </Form.Group>
+  </Col>
+);
