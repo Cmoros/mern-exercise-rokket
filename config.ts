@@ -1,6 +1,9 @@
+import * as dotenv from "dotenv";
+dotenv.config();
+
 const config = {
-  MONGODB_CONNECTION_STR: "mongodb+srv://cmoros:test1234@mernrokket.ec2mi3a.mongodb.net/rokket?retryWrites=true&w=majority",
-  MONGODB_TIMEOUT: 10000
-};
+  MONGODB_CONNECTION_STR: process.env.MONGODB_CONNECTION_STR as string,
+  MONGODB_TIMEOUT: +(process.env.MONGODB_TIMEOUT as string)
+}
 
 export default config;
